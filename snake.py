@@ -5,6 +5,7 @@ class Snake:
     def __init__(self):
         self.snake = []
         self.create_snake()
+        self.head = self.snake[0]
 
     def create_snake(self):
         x_cord = 0
@@ -21,29 +22,29 @@ class Snake:
             new_x_position = self.snake[snake_part - 1].xcor()
             new_y_position = self.snake[snake_part - 1].ycor()
             self.snake[snake_part].goto((new_x_position, new_y_position))
-        self.snake[0].forward(20)
+        self.head.forward(20)
 
 
     def up(self):
-        if self.snake[0].heading() == 270:
+        if self.head.heading() == 270:
             return
         else:
-            self.snake[0].setheading(90)
+            self.head.setheading(90)
 
     def down(self):
-        if self.snake[0].heading() == 90:
+        if self.head.heading() == 90:
             return
         else:
-            self.snake[0].setheading(270)
+            self.head.setheading(270)
 
     def left(self):
-        if self.snake[0].heading() == 0:
+        if self.head.heading() == 0:
             return
         else:
-            self.snake[0].setheading(180)
+            self.head.setheading(180)
 
     def right(self):
-        if self.snake[0].heading() == 180:
+        if self.head.heading() == 180:
             return
         else:
-            self.snake[0].setheading(0)
+            self.head.setheading(0)
